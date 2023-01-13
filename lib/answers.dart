@@ -16,8 +16,7 @@ class Answer extends StatelessWidget {
             foregroundColor: Colors.white,
           ),
           onPressed: selectedAnswer,
-          child: Text(answerText,
-              style: const TextStyle(fontSize: 20, color: Colors.white)),
+          child: Text(answerText, style: const TextStyle(color: Colors.white)),
         ));
   }
 }
