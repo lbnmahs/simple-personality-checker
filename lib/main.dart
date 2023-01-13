@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './quiz.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,6 +14,12 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   int _questionIndex = 0;
+
+  void _answerQuestion() {
+    setState(() {
+      _questionIndex++;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -68,7 +75,11 @@ class _MyAppState extends State<MyApp> {
       appBar: AppBar(
         title: const Text('Personality Checker'),
       ),
-      body: const Text('Hellow there!'),
+      body: Quiz(
+        answerQuestion: _answerQuestion,
+        questionIndex: _questionIndex,
+        questions: _questions,
+      ),
     ));
   }
 }
